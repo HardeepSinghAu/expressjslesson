@@ -42,6 +42,16 @@ var corsOptions = {
     optionsSuccessStatus: 200
 }
 app.use(cors(corsOptions));
+
+________________________________________________________________
+// config above
+// routes below
+
+const importedBlogRouting = require('./Blogs/BlogsRoutes');
+app.use('/blogs', importedBlogRouting);
+
+
+
 // Actual server behaviour
 // request and response
 app.get('/', (req, res) => {
