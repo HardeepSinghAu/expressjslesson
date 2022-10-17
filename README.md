@@ -5,3 +5,5 @@ NODE_ENV=Development node src/index.js
 
 2. npm run start-dev
 start-dev":"PORT=55000 NODE_ENV=development nodemon src/index.js
+
+3. make Procfile in root
