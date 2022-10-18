@@ -2,12 +2,17 @@
 const firebaseAdmin = require('firebase-admin');
 
 // Set up the Firebase Client SDK
-const {firebaseClientConfig} = require('../../keys/FirebaseClientKey');
+const {firebaseConfig} = require('/Users/hardeepsingh/Desktop/expressjslesson/keys/firebaseClientKeys.js');
+
+
 const firebaseClient = require("firebase/app");
 // Add the Firebase products that you want to use
 const {getAuth, signInWithEmailAndPassword} = require ("firebase/auth");
 // Initialize the Firebase Client SDK
-firebaseClient.initializeApp(firebaseClientConfig);
+firebaseClient.initializeApp(firebaseConfig);
+
+// config above & functions below ----------------------------------------------------------------
+// -----------------------------------------------------------------------------------------------
 
 async function signUpUser(userDetails){
     // Use the Firebase Admin SDK to create the user

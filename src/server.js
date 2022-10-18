@@ -80,6 +80,8 @@ app.get('/', (req, res) => {
 const importedBlogRouting = require('./Blogs/BlogsRoutes');
 app.use('/blogs', importedBlogRouting);
 
+const importedUserRouting = require('./Users/UserRoutes');
+app.use('/users', importedUserRouting);
 
 
 // Notice that we're not calling app.listen() anywhere in here.
