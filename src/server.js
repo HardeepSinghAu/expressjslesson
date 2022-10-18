@@ -43,6 +43,22 @@ var corsOptions = {
 }
 app.use(cors(corsOptions));
 
+
+require('dotenv').config();
+
+// to check the above command is running - console.log('Firebase project id is: ' + process.env.FIREBASE_ADMIN_PROJECT_ID)
+
+// initialise firebase below
+const firebaseAdmin = require('firebase-admin');
+firebaseAdmin.initializeApp({
+    // we create a credential during the runtime of the application. The object is a credential
+    credential: firebaseAdmin.credential.cert({
+        "projectId": process.env.FIREBASE_ADMIN_PROJECT_ID,
+        "privateKey": process.env.FIREBASE_ADMIN_PRIVATE_KEY.replace(/\\n/g, '\n'),
+        "clientEmail": process.env.FIREBASE_ADMIN_CLIENT_EMAIL
+    })
+});
+
 // ________________________________________________________________
 // config above
 // routes below (where app is exported)
