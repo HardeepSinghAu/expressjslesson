@@ -43,13 +43,9 @@ var corsOptions = {
 }
 app.use(cors(corsOptions));
 
-________________________________________________________________
+// ________________________________________________________________
 // config above
-// routes below
-
-const importedBlogRouting = require('./Blogs/BlogsRoutes');
-app.use('/blogs', importedBlogRouting);
-
+// routes below (where app is exported)
 
 
 // Actual server behaviour
@@ -64,6 +60,10 @@ app.get('/', (req, res) => {
     });
 
 });
+
+const importedBlogRouting = require('./Blogs/BlogsRoutes');
+app.use('/blogs', importedBlogRouting);
+
 
 
 // Notice that we're not calling app.listen() anywhere in here.
